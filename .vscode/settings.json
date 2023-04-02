@@ -1,14 +1,5 @@
 {
+  //기본 터미널 git bash 
     "terminal.integrated.defaultProfile.linux": "",
     "terminal.integrated.defaultProfile.windows": "Git Bash"
-    "editor.acceptSuggestionOnCommitCharacter": true,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.tabCompletion": "on",
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": true,
-      "strings": true
-    },
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.wordBasedSuggestions": false
 }
