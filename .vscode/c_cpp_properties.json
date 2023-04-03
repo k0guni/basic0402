@@ -1,5 +1,4 @@
-{   
-    //c언어 컴파일러 gdb 설정 
+{
     "configurations": [
         {
             "name": "Win32",
@@ -12,10 +11,10 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "cl.exe",
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4

@@ -67,12 +67,52 @@ void main()
 //     printf("문자열 개수 : %d \n", num);
 // }
 
-//포인터와 문자열
+// //포인터와 문자열
+// #include <stdio.h>
+// void main( ) 
+// {
+//     char *p;
+//     p = "Welcome";
+//     while(*p != 'c') p++;
+//     printf("%s \n", p);
+// }
+
+// //포인트변수 사용 예제
+// #include <stdio.h>
+
+// void main()
+// {
+//     int num = 5;
+//     int *p1 = &num;
+//     int *p2 = p1;
+
+//     (*p1)++;
+//     (*p2)--;
+//     printf("%d %d %d \n",num, *p1, *p2);
+
+//     *p1 = *p1 + *p2;
+//     printf("%d %d %d \n",num, *p1, *p2);
+// }
+
+//구조체와 공용체
+
+//구조체 포인터 변수의 사용
 #include <stdio.h>
-void main( ) 
-{
-    char *p;
-    p = "Welcome";
-    while(*p != 'c') p++;
-    printf("%s \n", p);
+
+typedef struct{
+    char *name;
+    int kor;
+    int eng;
+}MEMBER;
+
+void main(){
+    MEMBER hong;
+    MEMBER *p = &hong;
+
+    (*p).name = "Hong gil dong";
+    (*p).kor = 90;
+    (*p).eng = 80;
+
+    printf("이름: %s 국어: %d 영어: %d \n",hong.name,hong.kor,hong.eng);
 }
+
