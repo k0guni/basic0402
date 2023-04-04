@@ -97,22 +97,22 @@ void main()
 //구조체와 공용체
 
 //구조체 포인터 변수의 사용
-#include <stdio.h>
+// #include <stdio.h>
 
-typedef struct{
-    char *name;
-    int kor;
-    int eng;
-}MEMBER;
+// typedef struct{
+//     char *name;
+//     int kor;
+//     int eng;
+// }MEMBER;
 
-void main(){
-    MEMBER hong;
-    MEMBER *p = &hong;
+// void main(){
+//     MEMBER hong;
+//     MEMBER *p = &hong;
 
-    (*p).name = "Hong gil dong";
-    (*p).kor = 90;
-    (*p).eng = 80;
+//     (*p).name = "Hong gil dong";
+//     (*p).kor = 90;
+//     (*p).eng = 80;
 
-    printf("이름: %s 국어: %d 영어: %d \n",hong.name,hong.kor,hong.eng);
-}
+//     printf("이름: %s 국어: %d 영어: %d \n",hong.name,hong.kor,hong.eng);
+// }
 
