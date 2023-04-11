@@ -98,7 +98,7 @@ int main(void)
     cout<< endl << "1~100 중 7의 배수의 개수는 " <<count<<endl;
 } */
 
-//(2)
+/* //(2)
 #include <iostream>
 using namespace std;
 
@@ -115,6 +115,295 @@ int main(void)
 
     double avg = (double)sum/ 5.0;
     cout << "평균은 " << avg << " 입니다." <<endl;
+} */
 
+/* //ex4_2.cpp
+#include <iostream>
+using namespace std;
 
+int main(void)
+{
+    int a[3] = {10,20,30};
+    int i;
+
+    for (i=0; i<3; i++)
+        cout << i << "번째 원소의 주소: " << (a+i) << endl; 
+    cout << endl;
+    for (i=0; i<3; i++)
+        cout << i << "번째 원소의 주소: " << &a[i] << endl;
+    cout << endl;
+    for (i=0; i<3; i++)
+        cout << i << "번째 원소의 주소: " << a[i] << endl;
+    cout << endl;
+    for (i=0; i<3; i++)
+        cout << i << "번째 원소의 주소: " << *(a+1) << endl;
+    cout << endl;
+} */
+
+/* //ex4_3.cpp (1) (2차원 배열의 주소와 원소의 값)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[2][3] = {1,2,3,4,5,6};
+    int i,j;
+
+    for (i=0; i<2; i++){
+        for(j=0; j<3; j++){
+            cout << "&a[" << i << "][" << j << "]= "<< &a[i][j] << ",";
+            cout << "a[" << i << "][" << j << "]= "<< a[i][j] << endl;
+        }
+    }
+    cout << endl;
+
+    for (i=0; i<6; i++){
+        cout << "a[0]+" << i << " = "<< a[0]+i << ",";
+        cout << "*(a[0]+" << i << ") = " << *(a[0]+i) << endl;
+    }
+    cout << endl;
+}
+ */
+
+/* //ex4_4.cpp
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int num1 = 10, num2 =20;
+    int* pnum = &num1;
+    cout << "*pnum = " << *pnum << endl;
+
+    pnum = &num2;
+    cout << "*pnum = " << *pnum << endl;
+} */
+
+/* //ex4_5.cpp (void 포인터의 사용)
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int i = 100;
+    void* pv = &i;
+        //void* 자료형은 모든 자료형을 가리킬 수 있으므로,
+        // 형 변환 없이도 &i의 값을 보관할 수 있다.
+
+// int* pi = pv; //오류
+    int* pi = (int*)pv;
+        //보관하고 있는 주소를 int를 가리키는 주소로 사용하기 위해
+        //명시적으로 형 변환하여야 한다.
+    cout << *pi << endl;
+} */
+
+/* //ex4_6.cpp (2중 포인터의 사용)
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int num = 100;
+    int *pnum, **ppnum;
+
+    pnum = &num;
+    ppnum = &pnum;
+
+    cout << "num: "<< num << endl;
+    cout << "*pnum: "<< *pnum << endl;
+    cout << "**ppnum: "<< **ppnum << endl;
+
+    cout << "ppnum: "<< ppnum << endl;
+    cout << "pnum의 주소:  "<< &pnum << endl;
+    cout << "pnum: "<< pnum << endl;
+    cout << "num의 주소: "<< &num << endl;
+} */
+
+//ex4_7.cpp (구조체의 포인터 사용) p25
+/* #include <iostream>
+using namespace std;
+
+struct student {
+    int id;
+    char name[20];
+};
+
+int main(void)
+{
+    student stu1 = {1234, "gildong"};
+    student stu2 = {2345, "leesin"};
+    student *pstu;
+    pstu = &stu2;
+
+    cout << "stu1.id : " << stu1.id << ", stu1.name : " << stu1.name << endl;
+    cout << "(*pstu).id : " << (*pstu).id << ", (*pstu).name : " << (*pstu).name << endl;
+    cout << "pstu->id : " << pstu->id << ", pstu->name : " << pstu->name << endl;
+} */
+
+/* /////////////////////////책 problem ////////////////////////////////////
+//p103 3.6
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char ch, cap;
+
+    while(1){
+input:
+        cout << "알파벳 소문자를 입력하세요 (끝내려면 0): " ;
+        cin >> ch;
+
+        if(ch=='0')
+            return 0;
+        if((ch>=0x41)&&(ch<=0x5A)) 
+            goto input; // goto문은 버그가 많이 일어나기 때문에 잘 안쓴다.
+
+        cap = ch - 0x20;
+        cout << cap << endl;
+    }
+} */
+
+//3.7
+/* #include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int five_factorial = 1;
+    for(int i=1; i<=5; i++){
+        five_factorial *= i;
+    }
+    cout << five_factorial << endl;
+} */
+
+//3.8
+/* #include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int five_factorial = 1, i = 1 ;
+    while(i<=5){
+        five_factorial *= i;
+        i += 1;
+    }
+    cout << five_factorial << endl;
+} */
+
+//3.9
+/* #include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int five_factorial = 1, i = 1 ;
+    do{
+        five_factorial *= i;
+        i += 1;
+    }while(i<=5);
+    cout << five_factorial << endl;
+} */
+
+/* //3.10
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, num = 123;
+    for (i=1; i<4; i++)
+    {
+        cout.width(5);
+        cout << num << endl;
+        num *= 10;
+    }
+}
+
+//  123
+// 1230
+//12300 */
+
+//3.11
+/* #include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int i, j, ans;
+    cout.width(14);
+    for(i=1; i<10; i++)
+    {
+        for(j=2; j<10; j++ )
+        {
+            cout << j << " x " << i << " =   " << i*j <<"         "; 
+        }
+    }
+} */
+
+//3.11
+/* #include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 2; j <= 5; j++) {
+            cout.width(1);
+            cout << j << "x" << i << " = ";
+            cout.width(2);
+            cout << i * j << "  ";
+        }
+        cout << endl;
+    }
+
+    cout << endl;
+
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 6; j <= 9; j++) {
+            cout.width(1);
+            cout << j << "x" << i << " = ";
+            cout.width(2);
+            cout << i * j << "  ";
+        }
+        cout << endl;
+    }
+} */
+
+//4.1
+//라. 10
+
+//4.2
+//다. 4byte
+
+//4.3
+//다. 20
+
+//4.4
+//라. 30
+
+/* //4.5
+//라
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int a[3] = {40,50,60};
+    //cout << *a[2] <<endl; // 오류
+    cout << &a[2] <<endl;
+    cout << a+2 <<endl;
+    cout << *(a+2) <<endl;
+} */
+
+//4.6
+//하
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+    int n = 20;
+    int &r = n;
+    n++;
+    cout << r << endl;
 }
