@@ -1,5 +1,8 @@
 {
   //기본 터미널 git bash 
     "terminal.integrated.defaultProfile.linux": "",
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "files.associations": {
+      "iostream": "cpp"
+    }
 }
