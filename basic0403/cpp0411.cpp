@@ -396,14 +396,17 @@ int main(void)
 } */
 
 //4.6
-//하
-#include <iostream>
+//다
+/* #include <iostream>
 using namespace std;
 
 int main(void)
 {
     int n = 20;
-    int &r = n;
+    int &r = n; //r은 참조변수
     n++;
     cout << r << endl;
-}
+} */
+
+
+
